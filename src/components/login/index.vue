@@ -215,7 +215,7 @@
     }
     //点击手机短信验证码盒子回调
     const handler = ()=>{
-        scene.value =0
+        scene.value =0;
     }
 
 
@@ -224,7 +224,7 @@
     <script lang="ts">
 
     export default {
-        name: 'Login'
+        name: 'Login',
     }
 </script>
 
