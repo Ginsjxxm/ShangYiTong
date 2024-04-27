@@ -5,11 +5,13 @@
       <router-view></router-view>
     </div>
     <HospitalBottom/>
+    <Login v-if="userStore.visiable"/>
   </div>
 </template>
 
 <script setup lang="ts">
-
+import useDetailStore from '@/store/modules/use';
+let userStore = useDetailStore()
 </script>
 
 <style scoped lang="scss">

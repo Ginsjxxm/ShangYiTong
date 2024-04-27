@@ -13,6 +13,7 @@
     "@types/node": "^20.12.2",
     "axios": "^1.6.8",
     "element-plus": "^2.6.3",
+    "pinia": "^2.1.7",
     "sass": "^1.72.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"

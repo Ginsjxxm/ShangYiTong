@@ -8,7 +8,29 @@ export default createRouter({
         },
         {
             path:'/hospital',
-            component:()=>import('@/page/hospital/index.vue')
+            component:()=>import('@/page/hospital/index.vue'),
+            children:[
+                {
+                    path:'register',
+                    component:()=>import('@/page/hospital/register/index.vue')
+                },
+                {
+                    path:'detail',
+                    component:()=>import('@/page/hospital/detail/index.vue')
+                },
+                {
+                    path:'notice',
+                    component:()=>import('@/page/hospital/notice/index.vue')
+                },
+                {
+                    path:'close',
+                    component:()=>import('@/page/hospital/close/index.vue')
+                },
+                {
+                    path:'search',
+                    component:()=>import('@/page/hospital/search/index.vue')
+                }
+            ]
         },
         {
             path:'/',

@@ -4,11 +4,14 @@ import { ElMessage } from 'element-plus'
 
 const request = axios.create({
     baseURL:'/api',
-    timeout:5000
+    timeout:5000,
+    responseType:"json",
+    headers:{
+        "a":"123"
+    }
 })
 
-request.interceptors.request.use((config=>{
-
+request.interceptors.request.use((config=>{   //后续有请求秘钥的设置
     return config
 }))
 

@@ -15,8 +15,10 @@
 <script setup lang="ts">
 import { Search } from '@element-plus/icons-vue';
 import {ref} from 'vue'
+import { useRouter } from 'vue-router';
 import {reqHospitalInfo} from '@/api/home/index'
 import type{HospitalInfo} from '@/api/home/type'
+let $router = useRouter();
 //收集搜索关键字
 let hosname = ref<string>('')
 
@@ -25,7 +27,8 @@ const fetchdata=async (keyword:string,cb:any)=>{
     //变成人家组件需要的数据模式
     let showData = result.data.map(item=>{
         return {
-            value:item.hosname
+            value:item.hosname,
+            hoscode:item.hoscode
         }
     })
 
@@ -34,8 +37,8 @@ const fetchdata=async (keyword:string,cb:any)=>{
     
     
 }
-const goDetail = (item:any)=>{
-    
+const goDetail = (item: any)=>{
+    $router.push({ path:"/hospital/register",query:{hoscode:item.hoscode}})
 }
 </script>
 <script lang="ts">
